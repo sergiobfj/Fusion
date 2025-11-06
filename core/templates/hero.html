@@ -1,0 +1,33 @@
+{% load static %}
+<div id="hero-area" class="hero-area-bg">
+        <div class="container">      
+          <div class="row">
+            <div class="col-lg-7 col-md-12 col-sm-12 col-xs-12">
+              <div class="contents">
+                <h2 class="head-title">Fusion - Seu Painel de Controle Empresarial</h2>
+                    <p>Gerencie sua empresa com análises em tempo real, colaboração em equipe e ferramentas SaaS poderosas em uma única plataforma. Aumente a produtividade e tenha controle total do crescimento do seu negócio.</p>
+                    <a href="#" class="btn btn-common">Comece Gratuitamente</a>
+                    <a href="#" class="btn btn-border video-popup">Assista à Demonstração</a>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-5 col-md-12 col-sm-12 col-xs-12">
+              <div class="intro-img">
+                <img class="img-fluid" src="{% static '/img/intro-mobile.png' %}" alt="">
+              </div>            
+            </div>
+          </div> 
+        </div> 
+      </div>
+
+      <div class="container">
+        {% if messages %}
+          {% for m in messages %}
+            <div class="alert alert-{{ message.tags }}">
+              <button type="button" class="close" data-dismiss="alert"></button>
+              <strong>{{ m }}</strong>
+            </div>
+          {% endfor %}
+        {% endif %}
+      </div>
+</header>
