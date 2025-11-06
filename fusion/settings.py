@@ -137,6 +137,10 @@ if os.getenv('VERCEL'):
     ALLOWED_HOSTS = ['.vercel.app']
 
 
+import sys
+print(">>> Django settings loaded successfully", file=sys.stderr)
+
+
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.2/ref/settings/#default-auto-field
 
