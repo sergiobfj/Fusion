@@ -131,6 +131,11 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 # Email Teste
 EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 
+# Configuração especial para rodar no ambiente da Vercel
+if os.getenv('VERCEL'):
+    DEBUG = False
+    ALLOWED_HOSTS = ['.vercel.app']
+
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.2/ref/settings/#default-auto-field
