@@ -21,8 +21,7 @@ SECRET_KEY = os.getenv(
     "django-insecure-cx(%l@ilr^q35npfu1%5_*zk5ryg@8+4q%hni(-7snm^_g+cj%"
 )
 
-# ⚠️ Debug ativo apenas localmente
-DEBUG = os.getenv("DEBUG", "True") == "True"
+DEBUG = True
 
 # 🔹 Aceita tudo localmente e *.vercel.app no deploy
 ALLOWED_HOSTS = ['*', '.vercel.app']
