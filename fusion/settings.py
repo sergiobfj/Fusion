@@ -93,10 +93,8 @@ TEMPLATES = [
 # -----------------------------------------------------------
 DATABASES = {
     'default': dj_database_url.config(
-        default=os.getenv(
-            'DATABASE_URL',
-            f"sqlite:///{BASE_DIR / 'db.sqlite3'}"
-        ),
+        default=os.getenv('DATABASE_URL'),
+        conn_health_checks=True,
         conn_max_age=600,
     )
 }
