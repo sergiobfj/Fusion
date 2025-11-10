@@ -93,12 +93,15 @@ TEMPLATES = [
 # -----------------------------------------------------------
 DATABASES = {
     'default': dj_database_url.config(
-        default=os.getenv('DATABASE_URL'),
-        conn_health_checks=True,
+        default=os.environ.get('DATABASE_URL', None),  # pega a variável de ambiente
         conn_max_age=600,
+        conn_health_checks=True,
     )
 }
 
+# Validação para evitar usar host placeholder
+if not DATABASES['default']:
+    raise Exception("❌ DATABASE_URL não definida! Configure no Render ou no seu terminal local.")
 
 # -----------------------------------------------------------
 # 🔐 Validações de senha
